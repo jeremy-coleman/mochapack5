@@ -3,10 +3,6 @@
   "private": true,
   "license": "MIT",
   "author": "Jeremy Coleman",
-  "// note": "this is using node 15 workspaces, lerna init and use npm script postinstall lerna bootstrap --hoist for node <14",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "prettify": "pprettier --write packages/*/src/**/{*.js,*.jsx,*.ts,*.tsx}",
     "test": "mochapack \"tests/**/*.test.ts?(x)\" --require ./tests/setup.js --webpack-config=webpack.test.js --watch"
@@ -32,7 +28,7 @@
     "expect": "26.6.2",
     "jsdom": "16.4.0",
     "jsdom-global": "3.0.2",
-    "mochapack5": "*",
+    "mochapack5": "file:./packages/mochapack5",
     "moment": "2.29.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
