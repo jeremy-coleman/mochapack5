@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+/*
+ * entry file to support mocha-intellij
+ */
+
+//require('sucrase/register')
+require('../lib');

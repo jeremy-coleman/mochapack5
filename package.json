@@ -1,0 +1,44 @@
+{
+  "name": "root",
+  "private": true,
+  "license": "MIT",
+  "author": "Jeremy Coleman",
+  "// note": "this is using node 15 workspaces, lerna init and use npm script postinstall lerna bootstrap --hoist for node <14",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prettify": "pprettier --write packages/*/src/**/{*.js,*.jsx,*.ts,*.tsx}",
+    "test": "mochapack \"tests/**/*.test.ts?(x)\" --require ./tests/setup.js --webpack-config=webpack.test.js --watch"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "quoteProps": "consistent"
+  },
+  "dependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/plugin-transform-runtime": "7.12.10",
+    "@babel/preset-env": "7.12.10",
+    "@babel/preset-react": "7.12.10",
+    "@babel/preset-typescript": "7.12.7",
+    "@mixer/parallel-prettier": "2.0.0",
+    "@typescript-eslint/eslint-plugin": "4.9.1",
+    "@typescript-eslint/parser": "4.9.1",
+    "babel-plugin-macros": "3.0.0",
+    "expect": "26.6.2",
+    "jsdom": "16.4.0",
+    "jsdom-global": "3.0.2",
+    "mochapack5": "*",
+    "moment": "2.29.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.2.1",
+    "ts-loader": "8.0.11",
+    "tsconfig-paths-webpack-plugin": "3.3.0",
+    "typescript": "4.1.2",
+    "webpack-node-externals": "2.5.2"
+  }
+}
